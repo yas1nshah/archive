@@ -1,4 +1,7 @@
+#  Ignoring pycahce
 /server/__pycache__/
 /server/database/__pycache__/
 /server/schemas/__pycache__/
+
+# ignoring venv
 /server/venv/
