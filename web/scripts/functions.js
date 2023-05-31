@@ -73,7 +73,7 @@ export async function  s1tos2(){
         <h4><span>Speaks Punjabi:</span> ${Pres[i].punjabi}</h4>
         <h4><span>Origin City:</span> ${Pres[i].origin_city}</h4>
     <audio controls  >
-    <source src="/static/backend/audios/${Pres[i].id}/${aud}.ogg" type="audio/ogg">
+    <source src="/audios/${Pres[i].id}/${aud}.ogg" type="audio/ogg">
     </audio>
     </div>
     `)  // concat
@@ -90,7 +90,7 @@ const personReq = async (qur) => {
       },
       body: JSON.stringify(qur),
     }
-    let q = await fetch("http://127.0.0.1:8000/persons", options)
+    let q = await fetch("/persons", options)
     let response = q.json()
     return response
    }
