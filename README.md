@@ -22,3 +22,6 @@ final version.
 8. Run the server as described above.
 
 ## Downloading and installing Python
+
+1. use a intall and just add it to path.
+2. you just have to select the checkbox, while installing python to add it to path.
