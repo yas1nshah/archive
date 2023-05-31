@@ -14,9 +14,8 @@ app = FastAPI()
 app.mount("/web", StaticFiles(directory="../web"))
 app.mount("/audios", StaticFiles(directory="../audios"))
 
+
 # Website----------------------------------------------
-
-
 @app.get("/", response_class=HTMLResponse)
 async def mian():
     responce = """
@@ -52,8 +51,6 @@ async def mian():
 
 
 #  Api-------------------------------------------------
-
-
 @app.get("/sentences")
 async def new(db: Session = Depends(get_db)):
 
@@ -75,7 +72,6 @@ async def get_person(req: GetPerson, db: Session = Depends(get_db)):
 
 
 # Post--------------------------------------------------
-
 @app.post("/sen")
 async def add(db: Session = Depends(get_db)):
     sentence = Sentences(sentence="helloo")
