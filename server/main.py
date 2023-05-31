@@ -17,25 +17,39 @@ app.mount("/audios", StaticFiles(directory="../audios"))
 # Website----------------------------------------------
 
 
-# @app.get("/", response_class=HTMLResponse)
-# async def mian():
-#     with open("../index.html") as appHome:
-#         responce = appHome.read()
-#     return responce
+@app.get("/", response_class=HTMLResponse)
+async def mian():
+    responce = """
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="description" content="Example HTML Document">
+    <link rel="icon" href="/web/globe.svg" type="image/svg+xml">
+
+    <title>Archive</title>
 
 
-# @app.get("/main.js", response_class=HTMLResponse)
-# async def mian():
-#     with open("../main.js") as appHome:
-#         responce = appHome.read()
-#     return responce
+    <link rel="stylesheet" href="/web/style.css" />
+  </head>
+
+  <header>
+    <h1>Archive</h1> 
+  </header>
 
 
-# @app.get("/style.css", response_class=HTMLResponse)
-# async def mian():
-#     with open("../style.css") as appHome:
-#         responce = appHome.read()
-# return responce
+  
+
+<body >
+
+    <div id='startDiv'>  <button id='start' onclick="window.location.href='/web/index.html'">Start App</button></div>
+</body>
+</html>
+
+                  """
+    return responce
+
+
 
 #  Api-------------------------------------------------
 
@@ -50,7 +64,7 @@ async def new(db: Session = Depends(get_db)):
 
 @app.post('/persons')
 async def get_person(req: GetPerson, db: Session = Depends(get_db)):
-    print(req)
+    # print(req)
     stm = select(Person).where(Person.gender == req.gender,
                                Person.age == req.age,
                                Person.city == req.city,
