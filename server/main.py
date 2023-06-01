@@ -17,7 +17,7 @@ app.mount("/audios", StaticFiles(directory="../audios"))
 
 # Website----------------------------------------------
 @app.get("/", response_class=HTMLResponse)
-async def mian():
+async def main():
     responce = """
 <html>
 <head>
