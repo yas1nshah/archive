@@ -6,7 +6,7 @@ final version.
 
 1. Go to the server folder.
 2. Opne cmd.
-3. Type command "uvicorn main:app --host 0.0.0.0".
+3. Type command "uvicorn main:app --host 0.0.0.0 --port 80".
 4. Check for result "INFO: Application startup complete."
 5. Server is running.
 
